@@ -13833,7 +13833,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13858,7 +13858,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create the grid search object</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">regressor</span><span class="p">,</span> <span class="n">param_grid</span> <span class="o">=</span> <span class="n">params</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="n">scoring_fnc</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">regressor</span><span class="p">,</span> <span class="n">param_grid</span> <span class="o">=</span> <span class="n">params</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="n">scoring_fnc</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="n">cv_sets</span><span class="p">)</span>
 
     <span class="c1"># Fit the grid search object to the data to compute the optimal model</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -13895,7 +13895,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -13916,9 +13916,67 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <div class="output_area">
 <div class="prompt"></div>
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Parameter &#39;max_depth&#39; is 4 for the optimal model.
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-77-192f7c286a58&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Fit the training data to the model using grid search</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>reg <span class="ansi-blue-fg">=</span> fit_model<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> 
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg"># Produce the value for &#39;max_depth&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">print</span> <span class="ansi-blue-fg">&#34;Parameter &#39;max_depth&#39; is {} for the optimal model.&#34;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>reg<span class="ansi-blue-fg">.</span>get_params<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;max_depth&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-76-31ed1f73ea34&gt;</span> in <span class="ansi-cyan-fg">fit_model</span><span class="ansi-blue-fg">(X, y)</span>
+<span class="ansi-green-intense-fg ansi-bold">     24</span> 
+<span class="ansi-green-intense-fg ansi-bold">     25</span>     <span class="ansi-red-fg"># Fit the grid search object to the data to compute the optimal model</span>
+<span class="ansi-green-fg">---&gt; 26</span><span class="ansi-red-fg">     </span>grid <span class="ansi-blue-fg">=</span> grid<span class="ansi-blue-fg">.</span>fit<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     27</span> 
+<span class="ansi-green-intense-fg ansi-bold">     28</span>     <span class="ansi-red-fg"># Return the optimal model after fitting the data</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python2.7/site-packages/sklearn/grid_search.pyc</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-fg">(self, X, y)</span>
+<span class="ansi-green-intense-fg ansi-bold">    827</span> 
+<span class="ansi-green-intense-fg ansi-bold">    828</span>         &#34;&#34;&#34;
+<span class="ansi-green-fg">--&gt; 829</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_fit<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">,</span> ParameterGrid<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>param_grid<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    830</span> 
+<span class="ansi-green-intense-fg ansi-bold">    831</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python2.7/site-packages/sklearn/grid_search.pyc</span> in <span class="ansi-cyan-fg">_fit</span><span class="ansi-blue-fg">(self, X, y, parameter_iterable)</span>
+<span class="ansi-green-intense-fg ansi-bold">    571</span>                                     self<span class="ansi-blue-fg">.</span>fit_params<span class="ansi-blue-fg">,</span> return_parameters<span class="ansi-blue-fg">=</span>True<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    572</span>                                     error_score=self.error_score)
+<span class="ansi-green-fg">--&gt; 573</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">for</span> parameters <span class="ansi-green-fg">in</span> parameter_iterable
+<span class="ansi-green-intense-fg ansi-bold">    574</span>                 for train, test in cv)
+<span class="ansi-green-intense-fg ansi-bold">    575</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, iterable)</span>
+<span class="ansi-green-intense-fg ansi-bold">    756</span>             <span class="ansi-red-fg"># was dispatched. In particular this covers the edge</span>
+<span class="ansi-green-intense-fg ansi-bold">    757</span>             <span class="ansi-red-fg"># case of Parallel used with an exhausted iterator.</span>
+<span class="ansi-green-fg">--&gt; 758</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">while</span> self<span class="ansi-blue-fg">.</span>dispatch_one_batch<span class="ansi-blue-fg">(</span>iterator<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    759</span>                 self<span class="ansi-blue-fg">.</span>_iterating <span class="ansi-blue-fg">=</span> True
+<span class="ansi-green-intense-fg ansi-bold">    760</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansi-cyan-fg">dispatch_one_batch</span><span class="ansi-blue-fg">(self, iterator)</span>
+<span class="ansi-green-intense-fg ansi-bold">    601</span> 
+<span class="ansi-green-intense-fg ansi-bold">    602</span>         <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>_lock<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 603</span><span class="ansi-red-fg">             </span>tasks <span class="ansi-blue-fg">=</span> BatchedCalls<span class="ansi-blue-fg">(</span>itertools<span class="ansi-blue-fg">.</span>islice<span class="ansi-blue-fg">(</span>iterator<span class="ansi-blue-fg">,</span> batch_size<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    604</span>             <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>tasks<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    605</span>                 <span class="ansi-red-fg"># No more tasks available in the iterator: tell caller to stop.</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, iterator_slice)</span>
+<span class="ansi-green-intense-fg ansi-bold">    125</span> 
+<span class="ansi-green-intense-fg ansi-bold">    126</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> iterator_slice<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 127</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>items <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>iterator_slice<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    128</span>         self<span class="ansi-blue-fg">.</span>_size <span class="ansi-blue-fg">=</span> len<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>items<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    129</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python2.7/site-packages/sklearn/grid_search.pyc</span> in <span class="ansi-cyan-fg">&lt;genexpr&gt;</span><span class="ansi-blue-fg">((parameters,))</span>
+<span class="ansi-green-intense-fg ansi-bold">    572</span>                                     error_score=self.error_score)
+<span class="ansi-green-intense-fg ansi-bold">    573</span>                 <span class="ansi-green-fg">for</span> parameters <span class="ansi-green-fg">in</span> parameter_iterable
+<span class="ansi-green-fg">--&gt; 574</span><span class="ansi-red-fg">                 for train, test in cv)
+</span><span class="ansi-green-intense-fg ansi-bold">    575</span> 
+<span class="ansi-green-intense-fg ansi-bold">    576</span>         <span class="ansi-red-fg"># Out is a list of triplet: score, estimator, n_test_samples</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;ShuffleSplit&#39; object is not iterable</pre>
 </div>
 </div>
 
@@ -14028,7 +14086,7 @@ Average pupil-student ratio: 12.6
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: These prices seem reasonable considering the mean values of RM, LSTAT, and PTRATIO. As number of homes increase, the prices increase. As povery level increases, prices decrease. And as ratio increases, prices decrease. They also stay within the statistics explored earlier, where the mean and median hover around 450,000 and the min and max are respectively 105,000 to 1,024,800.</strong></p>
+<p><strong>Answer: These prices seem reasonable considering the mean values of RM, LSTAT, and PTRATIO. As number of rooms increase, the prices increase. As povery level increases, prices decrease. And as ratio increases, prices decrease. They also stay within the statistics explored earlier, where the mean and median hover around 450,000 and the min and max are respectively 105,000 to 1,024,800.</strong></p>
 
 </div>
 </div>
