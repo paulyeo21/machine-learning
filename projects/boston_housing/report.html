@@ -11806,7 +11806,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11880,7 +11880,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
@@ -11956,7 +11956,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: RM: Positive correlation. LSTAT: Positive correlation. PTRATIO: Negative correlation. </strong></p>
+<p><strong>Answer: I believe the number of rooms is positively correlated with the price of the house, because there is more demand for better living and better living can at times be attributed to bigger houses and bigger houses are usually more rooms. I believe the percentage of homeowners in the neighborhood is negatively correlated to the prices of houses, because people are willing to pay more for neighborhoods with lower crime rates, better schools, etc. and those traits usually correspond with neighborhoods with lower financial statuses. I believe the ratio of students to teachers in primary and seconary schools is negatively correlated with the price of homes, because parents believe more specific attention to their children will result in better education, so they are willing to purchase houses in neighborhoods with lower ratios of students to teachers. </strong></p>
 
 </div>
 </div>
@@ -11990,7 +11990,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;r2_score&#39;</span>
@@ -12055,7 +12055,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -12089,7 +12089,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: 0.923</strong></p>
+<p><strong>Answer: The model has successfully captured the variation of the target variable as the R^2 value is 0.923-- close to maximum value of 1.0</strong></p>
 
 </div>
 </div>
@@ -13796,7 +13796,7 @@ v4Z8jnMtxw4AAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The k-fold cross-validation training technique is used over traditional training/testing partition, because it allows the algorithm to use more of the available data and reduces overfitting problems. The technique is to split the data into k sets and run k separate experimenets using each set once as the test set. You repeat this and average the test results.</strong></p>
+<p><strong>Answer: The k-fold cross-validation training technique is used over traditional training/testing partition, because it allows the algorithm to use more of the available data and reduce overfitting. The technique is to split the data into k sets and run k separate experiments using each set once as the test set. You repeat this and average the test results. The other option of using a single validation set to fit all instances of the model could yield an overfitted model that does poorly with unseen data. The benefit of cross-validation by running k separate experiments is that the model is not tuned for a single validation set.</strong></p>
 
 </div>
 </div>
@@ -13833,7 +13833,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13895,7 +13895,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -13931,7 +13931,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: 4</strong></p>
+<p><strong>Answer: 4. The answer is equal to my guess from question 6.</strong></p>
 
 </div>
 </div>
@@ -13980,7 +13980,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14009,9 +14009,9 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predicted selling price for Client 1&#39;s home: $391,183.33
-Predicted selling price for Client 2&#39;s home: $189,123.53
-Predicted selling price for Client 3&#39;s home: $942,666.67
+<pre>Predicted selling price for Client 1&#39;s home: $411,000.00
+Predicted selling price for Client 2&#39;s home: $175,700.00
+Predicted selling price for Client 3&#39;s home: $875,700.00
 Average rooms: 3.561
 Average percentage of populations considered lower status: 1.98
 Average pupil-student ratio: 12.6
@@ -14028,7 +14028,7 @@ Average pupil-student ratio: 12.6
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: These prices seem reasonable considering the mean values of RM, LSTAT, and PTRATIO. As number of homes increase, the prices increase. As povery level increases, prices decrease. And as ratio increases, prices decrease.</strong></p>
+<p><strong>Answer: These prices seem reasonable considering the mean values of RM, LSTAT, and PTRATIO. As number of homes increase, the prices increase. As povery level increases, prices decrease. And as ratio increases, prices decrease. They also stay within the statistics explored earlier, where the mean and median hover around 450,000 and the min and max are respectively 105,000 to 1,024,800.</strong></p>
 
 </div>
 </div>
@@ -14105,7 +14105,7 @@ Range in prices: $28,652.84
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The constructed model is a good basic model to use for real-world setting, but a lot goes into estimating house prices. Prices are also very dependent on the city or neighborhood. I'm not confident the model is robust for outliers such as homes that have distinctively features that can sharply increase or decrease the prices.</strong></p>
+<p><strong>Answer: The constructed model is a good basic model to use for real-world setting, but a lot goes into estimating house prices. Prices are also very dependent on the city or neighborhood. I'm not confident the model is robust for outliers such as homes that have distinct features that can sharply increase or decrease the prices.</strong></p>
 
 </div>
 </div>
@@ -14121,19 +14121,6 @@ Range in prices: $28,652.84
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
